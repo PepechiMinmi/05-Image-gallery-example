@@ -21,11 +21,11 @@ export default function App() {
         setDispalyedImage(image);
     };
 
-    //5-4:画像を暗くするイベントbooleanで
+    //5-4:画像を暗くするイベント、トグルで
     const [isDarken,setIsDarken]=useState('true');
 
-    const handleDarkenClick=()=>{
-        setIsDarken(!isDarken);
+    const handleDarkenToggle=()=>{
+        setIsDarken((prev)=>!prev);
     };
 
     return (
@@ -40,11 +40,11 @@ export default function App() {
           <div 
             className="overlay"
             style={{//追加
-                backgroundColor:isDarken ? 'rgba(0,0,0,0.5)': 'rgba(0,0,0,0)',
+                backgroundColor:isDarken ? 'rgba(0,0,0,0)': 'rgba(0,0,0,0.5)',
             }}
           ></div>
-          <button className="dark" onClick={handleDarkenClick}>
-            {isDarken ? 'Lighten':'Darken'}
+          <button className="dark" onClick={handleDarkenToggle}>
+            {isDarken ? 'Darken':'Lighten'}
           </button>
         </div>
         <div className="thumb-bar">
