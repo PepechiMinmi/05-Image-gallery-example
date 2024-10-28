@@ -22,7 +22,7 @@ export default function App() {
     };
 
     //5-4:画像を暗くするイベントbooleanで
-    const [isDarken,setIsDarken]=useState('false');
+    const [isDarken,setIsDarken]=useState('true');
 
     const handleDarkenClick=()=>{
         setIsDarken(!isDarken);
